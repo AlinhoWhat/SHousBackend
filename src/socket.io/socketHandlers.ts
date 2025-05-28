@@ -1,6 +1,10 @@
 import { Server as SocketIOServer, Socket } from 'socket.io';
 import prisma from '../lib/prisma';
 import CryptoJS from 'crypto-js';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 
 const MSG_SECRET_KEY = process.env.MSG_SECRET_KEY;
 
