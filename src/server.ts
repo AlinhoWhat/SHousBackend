@@ -7,7 +7,7 @@ import { initializeSocketIO } from './socket.io/socketHandlers'; // Importer la 
 
 dotenv.config();
 
-const PORT = parseInt(process.env.PORT || '4000', 10); // J'ai gardé 4000 comme dans l'exemple précédent, ajustez si 5000 est correct.
+const PORT = parseInt(process.env.PORT || '4000', 10); 
 const MSG_SECRET_KEY = process.env.MSG_SECRET_KEY;
 
 if (!MSG_SECRET_KEY) {
@@ -28,7 +28,6 @@ const io = new SocketIOServer(server, {
 // Initialiser la logique Socket.IO en passant l'instance io
 initializeSocketIO(io);
 
-// Écouter sur le serveur HTTP au lieu de l'application Express directement
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`Le serveur backend fonctionne sur http://0.0.0.0:${PORT}`);
   console.log(`Socket.IO écoute sur le port ${PORT}`);
